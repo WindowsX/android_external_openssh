@@ -39,7 +39,7 @@ LOCAL_SHARED_LIBRARIES += libssl libcrypto libdl libz
 
 LOCAL_MODULE := libssh
 
-LOCAL_CFLAGS+=-O3
+LOCAL_CFLAGS+=-O3 -fno-strict-aliasing
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -53,6 +53,8 @@ LOCAL_SRC_FILES := \
     ssh.c readconf.c clientloop.c sshtty.c \
     sshconnect.c sshconnect1.c sshconnect2.c mux.c \
     roaming_common.c roaming_client.c
+
+LOCAL_CFLAGS+=-fno-strict-aliasing
 
 LOCAL_MODULE := ssh
 
